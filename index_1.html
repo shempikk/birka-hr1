@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+html{color-scheme:light dark}
+body{margin:0;font:14px/1.5 system-ui,sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Регламент передачи кандидатов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<style>
+:root{
+  --ground:#F7F2EC;
+  --surface:#FFFFFF;
+  --surface-2:#EFE6DD;
+  --line:#E3D7CB;
+  --line-strong:#C9B7A8;
+  --ink:#3B2A26;
+  --ink-2:#6B5750;
+  --ink-3:#9B8880;
+  --accent:#B76E79;
+  --accent-soft:#F7E6E7;
+  --violet:#8B7B9E;
+  --violet-soft:#EEEAF2;
+  --blue:#7E9AB4;
+  --blue-soft:#E8EFF4;
+  --good:#4A7C63;
+  --nav:#3B2A26;
+  --nav-ink:#F0E4DA;
+  --nav-ink-2:#B9A197;
+  --shadow:0 1px 2px rgba(59,42,38,.06), 0 8px 24px -16px rgba(59,42,38,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#231A17;
+    --surface:#2E2320;
+    --surface-2:#3A2C28;
+    --line:#493833;
+    --line-strong:#5E4941;
+    --ink:#F5EDE6;
+    --ink-2:#C9B5AC;
+    --ink-3:#9A867D;
+    --accent:#E0A9B2;
+    --accent-soft:#3F2B2E;
+    --violet:#B3A3C6;
+    --violet-soft:#312B3A;
+    --blue:#9EBACF;
+    --blue-soft:#25313A;
+    --good:#8CC0A5;
+    --nav:#1B1310;
+    --nav-ink:#F0E4DA;
+    --nav-ink-2:#A28C82;
+    --shadow:0 1px 2px rgba(0,0,0,.45), 0 8px 24px -16px rgba(0,0,0,.85);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#231A17;
+  --surface:#2E2320;
+  --surface-2:#3A2C28;
+  --line:#493833;
+  --line-strong:#5E4941;
+  --ink:#F5EDE6;
+  --ink-2:#C9B5AC;
+  --ink-3:#9A867D;
+  --accent:#E0A9B2;
+  --accent-soft:#3F2B2E;
+  --violet:#B3A3C6;
+  --violet-soft:#312B3A;
+  --blue:#9EBACF;
+  --blue-soft:#25313A;
+  --good:#8CC0A5;
+  --nav:#1B1310;
+  --nav-ink:#F0E4DA;
+  --nav-ink-2:#A28C82;
+  --shadow:0 1px 2px rgba(0,0,0,.45), 0 8px 24px -16px rgba(0,0,0,.85);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:Manrope,"Helvetica Neue",Arial,sans-serif;
+  font-size:15px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:700}
+h1{font-size:clamp(26px,4.2vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--nav-ink)}
+h2{font-size:20px;letter-spacing:-.01em}
+h3{font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+p{margin:0}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+header.top{background:var(--nav)}
+.top-inner{
+  max-width:940px;margin:0 auto;padding-inline:20px;padding-block:34px 30px;
+  display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;
+}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.top-inner .sub{color:var(--nav-ink-2);font-size:13.5px;margin-top:8px}
+.stamp{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);border:1px solid currentColor;border-radius:2px;padding:4px 9px;white-space:nowrap;
+}
+
+.wrap{max-width:940px;margin:0 auto;padding-inline:20px;padding-block:0 72px}
+
+/* the one rule */
+.rule{
+  margin-top:-18px;background:var(--surface);border:1px solid var(--line);
+  border-left:4px solid var(--accent);border-radius:4px;
+  padding:22px 24px;box-shadow:var(--shadow);
+}
+.rule .lbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.rule p{font-size:19px;font-weight:600;line-height:1.4;letter-spacing:-.01em}
+.rule .fine{font-size:14px;font-weight:400;color:var(--ink-2);margin-top:8px}
+
+section{margin-top:44px}
+section > h2{margin-bottom:6px}
+section > .lede{color:var(--ink-2);font-size:14px;margin-bottom:18px;max-width:64ch}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
+th{
+  text-align:left;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:700;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap;
+  background:var(--surface-2);
+}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+td.n{width:34px;font-family:"IBM Plex Mono",monospace;color:var(--accent);font-weight:600}
+td.what{font-weight:600}
+.who{
+  display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:2px;white-space:nowrap;
+}
+.who-hr{background:var(--violet-soft);color:var(--violet)}
+.who-kd{background:var(--blue-soft);color:var(--blue)}
+.req{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--accent-soft);color:var(--accent);border-radius:2px;padding:2px 6px;margin-left:8px;vertical-align:1px;
+}
+.term{font-family:"IBM Plex Mono",monospace;font-size:13px;font-variant-numeric:tabular-nums}
+
+.stage{margin-bottom:22px}
+.stage-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.stage-num{
+  width:22px;height:22px;border-radius:99px;background:var(--accent);color:#fff;
+  font-size:11.5px;font-weight:700;display:grid;place-items:center;flex:none;
+}
+:root[data-theme="dark"] .stage-num,
+:root:not([data-theme="light"]) .stage-num{color:#231A17}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .stage-num{color:#fff}}
+.stage-head h3{color:var(--ink);text-transform:none;letter-spacing:0;font-size:15px}
+
+ol.steps{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--ink-2)}
+ol.steps li::marker{color:var(--accent);font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600}
+ol.steps b{color:var(--ink);font-weight:600}
+
+ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--ink-2)}
+ul.plain li{padding-left:16px;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.66em;width:6px;height:6px;border-radius:99px;background:var(--line-strong)}
+ul.plain b{color:var(--ink);font-weight:700}
+
+code{
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+  background:var(--surface-2);border-radius:3px;padding:1px 5px;color:var(--ink);
+}
+pre{
+  margin:0;background:var(--nav);color:var(--nav-ink);border-radius:4px;
+  padding:20px 22px;overflow-x:auto;font-family:"IBM Plex Mono",monospace;
+  font-size:13px;line-height:1.75;
+}
+pre .k{color:var(--nav-ink-2)}
+pre .rq{color:var(--accent)}
+
+.note{
+  border-left:2px solid var(--accent);padding:2px 0 2px 15px;
+  font-size:13.5px;color:var(--ink-2);max-width:66ch;margin-top:16px;
+}
+.cut{
+  display:grid;grid-template-columns:auto 1fr;gap:10px 16px;align-items:baseline;
+  background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:18px 20px;margin-bottom:16px;
+}
+.cut .t{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--accent);white-space:nowrap;font-size:13.5px}
+.cut .d{font-size:14px;color:var(--ink-2)}
+.cut .d b{color:var(--ink);font-weight:600}
+
+.examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.ex{
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;background:var(--surface-2);
+  border-radius:3px;padding:6px 11px;color:var(--ink-2);
+}
+.ex b{color:var(--ink);font-weight:600}
+
+footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3)}
+
+@media (max-width:700px){
+  .cut{grid-template-columns:1fr;gap:4px}
+  .rule p{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div>
+      <div class="eyebrow">Birka Art · подбор</div>
+      <h1>Регламент передачи кандидатов</h1>
+      <p class="sub">HR → коммерческий директор. Версия 1, 17.09.2026</p>
+    </div>
+    <span class="stamp">Действует</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="rule">
+    <div class="lbl">Правило</div>
+    <p>Срок на просмотр идёт от полного пакета.</p>
+    <p class="fine">Не от отправки видео и не от даты интервью.</p>
+  </div>
+
+  <section>
+    <h2>Пакет — 11 позиций</h2>
+    <p class="lede">Нет хотя бы одной — пакет неполный, срок не запускается. ФИО и дата рождения — жёстко обязательные: без них карточка в Битриксе не заводится и кандидата нельзя отличить от однофамильца.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th></th><th>Что</th><th>Формат</th></tr></thead>
+        <tbody>
+          <tr><td class="n">1</td><td class="what">ФИО полностью <span class="req">обязательно</span></td><td>Фамилия, имя, отчество</td></tr>
+          <tr><td class="n">2</td><td class="what">Дата рождения <span class="req">обязательно</span></td><td>ДД.ММ.ГГГГ</td></tr>
+          <tr><td class="n">3</td><td class="what">Город, телефон, Telegram</td><td>Текстом</td></tr>
+          <tr><td class="n">4</td><td class="what">Резюме с hh</td><td>PDF целиком</td></tr>
+          <tr><td class="n">5</td><td class="what">Вакансия и дата отклика</td><td>Текстом</td></tr>
+          <tr><td class="n">6</td><td class="what">Видео интервью</td><td>Одним файлом</td></tr>
+          <tr><td class="n">7</td><td class="what">Расшифровка интервью</td><td>.txt рядом с видео</td></tr>
+          <tr><td class="n">8</td><td class="what">Тесты PAEI и Белбина</td><td>Скриншоты со всеми цифрами</td></tr>
+          <tr><td class="n">9</td><td class="what">Описание от HR</td><td>По 6 пунктам ниже</td></tr>
+          <tr><td class="n">10</td><td class="what">История общения</td><td>Был ли отклик или отказ раньше</td></tr>
+          <tr><td class="n">11</td><td class="what">Рекомендации</td><td>Если есть</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Описание от HR — 6 пунктов</h2>
+    <p class="lede">Пишется всегда, даже если мы уже общались с кандидатом.</p>
+    <ol class="steps">
+      <li><b>Опыт:</b> лет, площадки, категории, размер команды</li>
+      <li><b>Метрики:</b> оборот, маржинальность, SKU, выполнение плана</li>
+      <li><b>Причина поиска</b> — его словами</li>
+      <li><b>Текущий доход и ожидания</b> — две разные цифры</li>
+      <li><b>Формат работы</b> и готовность к командировкам</li>
+      <li><b>Дата готовности выйти</b></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Куда класть</h2>
+    <p class="lede">Файлы — на Диске, учёт и статусы — в Битриксе.</p>
+    <ul class="plain">
+      <li><b>Google Диск</b> — все файлы. Папка <code>Подбор / &lt;вакансия&gt; / &lt;Фамилия Имя&gt;</code>. Имена: <code>Фамилия_резюме.pdf</code>, <code>Фамилия_интервью.mp4</code>, <code>Фамилия_расшифровка.txt</code>, <code>Фамилия_тесты.pdf</code>, <code>Фамилия_второй_этап.mp4</code></li>
+      <li><b>Битрикс</b> — карточка, статус, ссылка на папку. Файлы не дублируются</li>
+      <li><b>Телеграм</b> — только уведомление «пакет собран». Файлы в чат не кидаются</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Сроки</h2>
+
+    <div class="stage">
+      <div class="stage-head"><span class="stage-num">1</span><h3>Первичное интервью HR</h3></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Действие</th><th>Кто</th><th>Срок</th></tr></thead>
+          <tbody>
+            <tr><td class="what">Собрать полный пакет</td><td><span class="who who-hr">HR</span></td><td class="term">До конца следующего рабочего дня</td></tr>
+            <tr><td class="what">Сообщить, что пакет собран</td><td><span class="who who-hr">HR</span></td><td class="term">В момент сбора</td></tr>
+            <tr><td class="what">Сообщить, что пакет неполный</td><td><span class="who who-kd">Комдир</span></td><td class="term">В день получения</td></tr>
+            <tr><td class="what">Решение: второй этап или отказ</td><td><span class="who who-kd">Комдир</span></td><td class="term">1 раб. день от полного пакета</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-head"><span class="stage-num">2</span><h3>Собеседование с комдиром</h3></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Действие</th><th>Кто</th><th>Срок</th></tr></thead>
+          <tbody>
+            <tr><td class="what">Выложить запись собеса в папку</td><td><span class="who who-hr">HR</span></td><td class="term">1–2 часа после встречи</td></tr>
+            <tr><td class="what">Решение: оффер или отказ</td><td><span class="who who-kd">Комдир</span></td><td class="term">1 раб. день от выкладки записи</td></tr>
+            <tr><td class="what">Передать запись директору</td><td><span class="who who-kd">Комдир</span></td><td class="term">Вместе с решением</td></tr>
+            <tr><td class="what">Обратная связь кандидату</td><td><span class="who who-hr">HR</span></td><td class="term">В день решения</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Запись второго этапа нужна быстро потому, что на нём решается оффер. Задержка записи на день — это задержка оффера на день.</p>
+    </div>
+
+    <div class="stage">
+      <div class="stage-head"><span class="stage-num">3</span><h3>Отсечка 13:00</h3></div>
+      <div class="cut">
+        <span class="t">до 13:00</span>
+        <span class="d">Решение <b>до конца следующего рабочего дня</b></span>
+        <span class="t">после 13:00</span>
+        <span class="d">Считается полученным <b>следующим утром</b>, решение до конца дня после него</span>
+      </div>
+      <div class="examples">
+        <span class="ex">Вт 11:00 → <b>до конца ср</b></span>
+        <span class="ex">Вт 18:00 → <b>до конца чт</b></span>
+        <span class="ex">Пт 16:00 → <b>до конца вт</b></span>
+      </div>
+      <p class="note">Сократить срок можно отдельной просьбой с обоснованием: «его забирают, готов ждать до четверга — успеем?»</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Если пакет неполный</h2>
+    <ol class="steps">
+      <li>Комдир в день получения пишет: <b>«Пакет неполный, не хватает: …»</b></li>
+      <li>Срок не запускается, статус — <b>«пакет собирается»</b></li>
+      <li>HR досылает и сообщает, что пакет собран. <b>От этого момента идёт срок</b></li>
+      <li>Если чего-то не будет — HR пишет об этом явно, с причиной</li>
+    </ol>
+    <p class="note">Три и больше неполных пакетов за месяц — вопрос выносится на руководство как сбой процесса, а не как претензия к человеку.</p>
+  </section>
+
+  <section>
+    <h2>Статусы в Битриксе</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Статус</th><th>Кто ставит</th></tr></thead>
+        <tbody>
+          <tr><td class="what">Новый отклик</td><td><span class="who who-hr">HR</span></td></tr>
+          <tr><td class="what">Скрининг пройден</td><td><span class="who who-hr">HR</span></td></tr>
+          <tr><td class="what">Пакет собирается</td><td><span class="who who-hr">HR</span></td></tr>
+          <tr><td class="what">Пакет собран</td><td><span class="who who-hr">HR</span></td></tr>
+          <tr><td class="what">На разборе</td><td><span class="who who-kd">Комдир</span></td></tr>
+          <tr><td class="what">Второй этап назначен</td><td><span class="who who-kd">Комдир</span></td></tr>
+          <tr><td class="what">Запись второго этапа выложена</td><td><span class="who who-hr">HR</span></td></tr>
+          <tr><td class="what">Оффер</td><td><span class="who who-kd">Комдир</span></td></tr>
+          <tr><td class="what">Отказ</td><td><span class="who who-kd">Комдир</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Причина отказа фиксируется всегда, одной строкой. Кандидаты возвращаются через год, и без записи никто не помнит, почему отказали.</p>
+  </section>
+
+  <section>
+    <h2>Шаблон сообщения о передаче</h2>
+    <p class="lede">Одно сообщение в чат, когда папка собрана. Без файлов в чате.</p>
+<pre>Кандидат на &lt;вакансия&gt;
+<span class="k">ФИО:</span>          <span class="rq">← обязательно</span>
+<span class="k">Дата рождения:</span> <span class="rq">← обязательно</span>
+<span class="k">Город:</span>
+<span class="k">Дата отклика:</span>
+<span class="k">Дата интервью:</span>
+
+<span class="k">Опыт и функционал:</span>
+<span class="k">Метрики:</span>
+<span class="k">Причина поиска:</span>
+<span class="k">Текущий доход / ожидания:</span>
+<span class="k">Формат работы:</span>
+<span class="k">Готов выйти с:</span>
+
+<span class="k">История общения:</span> да (когда, почему) / нет
+<span class="k">Рекомендации:</span> есть / нет
+
+<span class="k">Папка:</span> &lt;ссылка&gt;
+<span class="k">Битрикс:</span> &lt;ссылка&gt;
+
+Пакет полный: да</pre>
+    <p class="note">Последняя строка обязательна: именно она запускает срок.</p>
+  </section>
+
+  <footer>Birka Art · регламент передачи кандидатов, версия 1 от 17.09.2026</footer>
+
+</div>
+</body>
+</html>
